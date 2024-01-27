@@ -37,7 +37,7 @@ export class ContentCardComponent implements OnInit {
       title: 'Empanadas',
       description: 'A famous plate from Argentina, consisting in a fried dough filled with ground beef and vegetables',
       creator: 'Cristian Muller',
-      type: 'Comedy/Fantasy',
+      type: 'Full Meal',
       imgURL: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Empanadas_cr.jpg',
     });
   }
