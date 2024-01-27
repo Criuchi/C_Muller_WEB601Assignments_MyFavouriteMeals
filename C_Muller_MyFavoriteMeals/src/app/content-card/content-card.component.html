@@ -1,1 +1,3 @@
-<p>content-card works!</p>
+<section *ngFor="let contentItem of contentList.getContentArray; let i = index">
+    <div [innerHTML]="contentList.outputHtmlContent(i)"></div>
+</section>
