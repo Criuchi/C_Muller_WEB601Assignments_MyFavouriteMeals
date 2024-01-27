@@ -7,5 +7,4 @@ Created an application using Angular and added a component to display informatio
 
 Finished on 2024/01/27
 
--- The node_modules folder disappeared when I have opened the project again, this issue seems to be solved by running the command npm install 
-   In case this happens again, the solution to it is noted right here
+-- The code shows on the localhost but not on stackblitz due to some error in stackblitz knows as Error: NG0908: In this configuration Angular requires Zone.js
