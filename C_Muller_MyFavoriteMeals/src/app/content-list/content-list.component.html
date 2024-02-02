@@ -1,1 +1,4 @@
-<p>content-list works!</p>
+<div>
+    <h1>Meals:</h1>
+    <app-content-card *ngFor="let contentItem of contentArray" [content]="contentItem"></app-content-card>
+</div>

@@ -1,3 +1,19 @@
-<section *ngFor="let contentItem of contentList.getContentArray; let i = index">
+<!-- <section *ngFor="let contentItem of contentList.getContentArray; let i = index">
     <div [innerHTML]="contentList.outputHtmlContent(i)"></div>
-</section>
+</section> -->
+
+<div [style.border]="content.id === 1 ? '2px solid black' : '1px solid purple'">
+    <header>{{ content.title }}</header>
+    
+    <img [src]="content.imgURL" (click)="showDetails()"/>
+  
+    <p>Description: {{ content.description }}</p>
+  
+    <p>Creator: {{ content.creator }}</p>
+  
+    <p>Type: {{ content.type }}</p>
+  
+    <div *ngFor="let tag of content.tags">
+      Tags: 
+    </div>
+  </div>
