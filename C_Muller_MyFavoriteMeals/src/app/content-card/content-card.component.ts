@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Content } from '../helper-files/content-interface';
 
 @Component({
   selector: 'app-content-card',
@@ -9,10 +10,12 @@ import { CommonModule } from '@angular/common';
   styleUrl: './content-card.component.scss'
 })
 
-export class ContentCardComponent implements OnInit {
+export class ContentCardComponent {
 
+  @Input() content!: Content;
 
-  ngOnInit(){
-    
+  itemDetail() {
+    console.log(`Id: ${this.content.id}, Title: ${this.content.title}`);
   }
+  
 }

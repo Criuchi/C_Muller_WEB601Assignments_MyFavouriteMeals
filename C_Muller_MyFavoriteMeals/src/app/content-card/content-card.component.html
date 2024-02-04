@@ -2,10 +2,11 @@
     <div [innerHTML]="contentList.outputHtmlContent(i)"></div>
 </section> -->
 
-<div [style.border]="content.id === 1 ? '2px solid black' : '1px solid purple'">
+<div [style.border]="content.id === 1 ? '2px solid black' : '1px solid red'" [style.padding]="'20px'" [style.margin]="'10px'">
+
     <header>{{ content.title }}</header>
     
-    <img [src]="content.imgURL" (click)="showDetails()"/>
+    <img [src]="content.imgURL" (click)="itemDetail()"/>
   
     <p>Description: {{ content.description }}</p>
   
@@ -14,6 +15,7 @@
     <p>Type: {{ content.type }}</p>
   
     <div *ngFor="let tag of content.tags">
-      Tags: 
+      - {{ tag }} 
     </div>
-  </div>
+
+</div>
