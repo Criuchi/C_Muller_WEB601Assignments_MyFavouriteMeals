@@ -4,11 +4,12 @@ import { Content } from '../helper-files/content-interface';
 import {ContentCardComponent} from '../content-card/content-card.component';
 import { RouterOutlet } from '@angular/router';
 import { MealFilterPipe } from '../meal-filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [CommonModule, ContentCardComponent, RouterOutlet, MealFilterPipe],
+  imports: [CommonModule, ContentCardComponent, RouterOutlet, MealFilterPipe, FormsModule],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.scss'
 })
@@ -79,6 +80,19 @@ export class ContentListComponent {
     },
 
   ]
+
+  contentFilter: Content[] = [];
+  title: string = '';
+  message: string = '';
+  isFound: boolean = false;
+
+  titleCheck(){
+    this.contentFilter = this.contentArray.filter(contentItem => contentItem.title.toLowerCase() === this.title.toLowerCase());
+
+    this.isFound = this.contentFilter.length > 0;
+
+    this.message = this.isFound ? `Meal with title '${this.title}' was found.` : `Meal with title '${this.title}' was not found.`;
+  }
 
   constructor() {
      
