@@ -1,25 +1,27 @@
-<div>
-    <!--<app-content-card *ngFor="let contentItem of contentArray" [content]="contentItem"></app-content-card>-->
-    <h3>Complete Meals</h3>
-    <app-content-card *ngFor="let contentItem of contentArray | mealFilter:'Complete Meal'" [content]="contentItem"></app-content-card>
-</div>
+<div class="content-list">
+    <div class="completeMeals">
+        <!--<app-content-card *ngFor="let contentItem of contentArray" [content]="contentItem"></app-content-card>-->
+        <h3>Complete Meals</h3>
+        <app-content-card *ngFor="let contentItem of contentArray | mealFilter:'Complete Meal'" [content]="contentItem"></app-content-card>
+    </div>
 
-<div>
-    <h3>Salads</h3>
-    <app-content-card *ngFor="let contentItem of contentArray | mealFilter:'Salad'" [content]="contentItem"></app-content-card>
-</div>
+    <div class="salads">
+        <h3>Salads</h3>
+        <app-content-card *ngFor="let contentItem of contentArray | mealFilter:'Salad'" [content]="contentItem"></app-content-card>
+    </div>
 
-<div>
-    <h3>Soups</h3>
-    <app-content-card *ngFor="let contentItem of contentArray | mealFilter:'Soup'" [content]="contentItem"></app-content-card>
-</div>
+    <div class="soups">
+        <h3>Soups</h3>
+        <app-content-card *ngFor="let contentItem of contentArray | mealFilter:'Soup'" [content]="contentItem"></app-content-card>
+    </div>
 
-<div>
-    <h3>Appetizers</h3>
-    <app-content-card *ngFor="let contentItem of contentArray | mealFilter:'Appetizer'" [content]="contentItem"></app-content-card>
-</div>
+    <div class="appetizers">
+        <h3>Appetizers</h3>
+        <app-content-card *ngFor="let contentItem of contentArray | mealFilter:'Appetizer'" [content]="contentItem"></app-content-card>
+    </div>
 
-<div>
-    <h3>No Types</h3>
-    <app-content-card *ngFor="let contentItem of contentArray | mealFilter:''" [content]="contentItem"></app-content-card>
+    <div class="noTypes">
+        <h3>No Types</h3>
+        <app-content-card *ngFor="let contentItem of contentArray | mealFilter:''" [content]="contentItem"></app-content-card>
+    </div>
 </div>

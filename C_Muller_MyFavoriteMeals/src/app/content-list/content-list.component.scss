@@ -1,6 +1,38 @@
+
+
 h3{
     text-align: center;
     text-decoration: underline;
     font-size: 50px;
     font-family: 'Times New Roman', Times, serif;
+}
+
+.completeMeals{
+    border: 3px solid rgb(126, 0, 0);
+    color: rgb(80, 10, 10);
+    margin-bottom: 20px;
+}
+
+.salads{
+    border: 3px solid rgb(5, 141, 57);
+    color: rgb(8, 61, 12);
+    margin-bottom: 20px;
+}
+
+.soups{
+    border: 3px solid rgb(11, 73, 167);
+    color: rgb(4, 3, 59);
+    margin-bottom: 20px;
+}
+
+.appetizers{
+    border: 3px solid rgb(233, 60, 7);
+    color: rgb(105, 39, 0);
+    margin-bottom: 20px;
+}
+
+.noTypes{
+    border: 3px solid rgb(134, 15, 138);
+    color: rgb(54, 1, 52);
+    margin-bottom: 20px;
 }
