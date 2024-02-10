@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { Content } from '../helper-files/content-interface';
 import {ContentCardComponent} from '../content-card/content-card.component';
 import { RouterOutlet } from '@angular/router';
+import { MealFilterPipe } from '../meal-filter.pipe';
 
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [CommonModule, ContentCardComponent, RouterOutlet],
+  imports: [CommonModule, ContentCardComponent, RouterOutlet, MealFilterPipe],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.scss'
 })
@@ -45,7 +46,7 @@ export class ContentListComponent {
       title: 'Ramen',
       description: 'pork, eggs and vegetables cooked in a broth',
       creator: 'Trinity Scott',
-      type: 'Heavy Soup',
+      type: 'Soup',
       imgURL: 'https://upload.wikimedia.org/wikipedia/commons/2/24/Hachioji.jpg',
       tags: ['Japanese ', 'Tasty ', 'Healthy'],
     },
