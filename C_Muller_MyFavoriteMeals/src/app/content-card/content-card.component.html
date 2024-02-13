@@ -7,7 +7,12 @@
   <div class="content-card">
     <header>{{ content.title }}</header>
     
-    <img [src]="content.imgURL" (click)="itemDetail()"/>
+    <img *ngIf="content.imgURL; else defaultImage" [src]="content.imgURL" (click)="itemDetail()"/>
+
+    
+    <ng-template #defaultImage>
+       <img class="default" src="https://upload.wikimedia.org/wikipedia/commons/5/54/Pictograms-nps-food_service.svg" alt="food" (click)="itemDetail()">
+    </ng-template>
   
     <p>Description: {{ content.description }}</p>
   
