@@ -1,11 +1,12 @@
 {
   "name": "c-muller-my-favorite-meals",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "scripts": {
     "ng": "ng",
     "generatecomponent": "ng generate component",
     "generatepipe": "ng generate pipe",
     "generatedirective": "ng generate directive",
+    "generateservice": "ng generate service",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",

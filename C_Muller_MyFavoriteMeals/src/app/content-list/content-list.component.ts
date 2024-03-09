@@ -5,6 +5,7 @@ import {ContentCardComponent} from '../content-card/content-card.component';
 import { RouterOutlet } from '@angular/router';
 import { MealFilterPipe } from '../meal-filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { contentArray } from '../helper-files/contentDb';
 
 @Component({
   selector: 'app-content-list',
@@ -14,7 +15,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './content-list.component.scss'
 })
 export class ContentListComponent {
-  contentArray: Content[] = [
+/*   contentArray: Content[] = [
     {
       id: 1,
       title: 'Tonkatsu',
@@ -92,7 +93,7 @@ export class ContentListComponent {
     this.isFound = this.contentFilter.length > 0;
 
     this.message = this.isFound ? `Meal with title '${this.title}' was found.` : `Meal with title '${this.title}' was not found.`;
-  }
+  } */
 
   constructor() {
      
