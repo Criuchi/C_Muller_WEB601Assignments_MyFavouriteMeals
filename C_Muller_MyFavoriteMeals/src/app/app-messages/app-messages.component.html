@@ -1,0 +1,3 @@
+<div *ngIf="messagesService.messages.length > 0">
+    <h3 *ngFor="let message of messagesService.messages">{{ message }}</h3>
+</div>

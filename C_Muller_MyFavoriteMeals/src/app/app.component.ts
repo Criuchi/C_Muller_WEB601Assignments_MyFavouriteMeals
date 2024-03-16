@@ -8,11 +8,12 @@ import { catchError, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import {Content} from './helper-files/content-interface';
 import { MealServiceService } from './meal-service.service';
+import { AppMessagesComponent } from './app-messages/app-messages.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ContentCardComponent, ContentListComponent, FormsModule, CommonModule],
+  imports: [RouterOutlet, ContentCardComponent, ContentListComponent, AppMessagesComponent, FormsModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
