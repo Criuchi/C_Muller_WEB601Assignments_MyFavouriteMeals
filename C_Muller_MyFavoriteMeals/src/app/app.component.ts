@@ -30,7 +30,8 @@ export class AppComponent implements OnInit {
   }
 
   getContentById(id: number): void {
-    this.mealService.getContentById(id).pipe(
+    this.mealService.getContentById(id)
+    .pipe(
       tap((content: Content | undefined) => {
         this.customContent = content;
       }),

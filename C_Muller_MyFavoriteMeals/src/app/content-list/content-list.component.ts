@@ -1,20 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Content } from '../helper-files/content-interface';
 import {ContentCardComponent} from '../content-card/content-card.component';
-import { RouterOutlet } from '@angular/router';
 import { MealFilterPipe } from '../meal-filter.pipe';
 import { FormsModule } from '@angular/forms';
-import { contentArray } from '../helper-files/contentDb';
+import { MealServiceService } from '../meal-service.service';
+import { catchError} from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [CommonModule, ContentCardComponent, RouterOutlet, MealFilterPipe, FormsModule],
+  imports: [CommonModule, ContentCardComponent, MealFilterPipe, FormsModule],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.scss'
 })
-export class ContentListComponent {
+export class ContentListComponent implements OnInit {
+
 /*   contentArray: Content[] = [
     {
       id: 1,
@@ -81,11 +83,12 @@ export class ContentListComponent {
     },
 
   ]
-
+  */
+  contentArray: Content[] = [];
   contentFilter: Content[] = [];
-  title: string = '';
-  message: string = '';
-  isFound: boolean = false;
+  title:string = '';
+  message:string = '';
+  isFound:boolean = false;
 
   titleCheck(){
     this.contentFilter = this.contentArray.filter(contentItem => contentItem.title.toLowerCase() === this.title.toLowerCase());
@@ -93,9 +96,26 @@ export class ContentListComponent {
     this.isFound = this.contentFilter.length > 0;
 
     this.message = this.isFound ? `Meal with title '${this.title}' was found.` : `Meal with title '${this.title}' was not found.`;
-  } */
+  } 
 
-  constructor() {
-     
+  constructor(private mealService: MealServiceService){ }
+
+     getMealsContent():void {
+      this.mealService.getContentArray().pipe(
+        catchError(error => {
+          console.error('Error fetching content:', error);
+          return of([]);
+        })
+      )
+
+      .subscribe((content: Content[]) => {
+        this.contentArray = content;
+      });
+     }
+
+     ngOnInit(): void {
+      this.getMealsContent();
+     }
   }
-}
+
+

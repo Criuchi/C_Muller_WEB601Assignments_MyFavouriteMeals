@@ -1,2 +1,7 @@
 <h1>My Favorite Meals - Cristian Muller</h1>
-<app-content-list></app-content-list>
+<!-- <app-content-list></app-content-list> -->
+
+<div>
+    <app-content-card *ngIf="customContent" id="custom-card" [content]="customContent"></app-content-card>
+    <app-content-list></app-content-list>
+</div>
