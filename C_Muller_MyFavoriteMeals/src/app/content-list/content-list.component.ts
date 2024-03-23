@@ -7,11 +7,12 @@ import { FormsModule } from '@angular/forms';
 import { MealServiceService } from '../meal-service.service';
 import { catchError} from 'rxjs/operators';
 import { of } from 'rxjs';
+import { ModifyContentComponentComponent } from '../modify-content-component/modify-content-component.component';
 
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [CommonModule, ContentCardComponent, MealFilterPipe, FormsModule],
+  imports: [CommonModule, ContentCardComponent, MealFilterPipe, FormsModule, ModifyContentComponentComponent],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.scss'
 })
@@ -90,12 +91,29 @@ export class ContentListComponent implements OnInit {
   message:string = '';
   isFound:boolean = false;
 
+  onContentAdded(newContent: Content) {
+    console.log('New content:', newContent);
+    this.contentArray = [...this.contentArray, newContent];
+    if(newContent){
+      console.log(`Success ${newContent.title}`);
+    }
+  }
+
   titleCheck(){
-    this.contentFilter = this.contentArray.filter(contentItem => contentItem.title.toLowerCase() === this.title.toLowerCase());
+    if (!this.title) {
+      this.message = "Title is not provided.";
+      return;
+    }
+
+    this.contentFilter = this.contentArray.filter(item => 
+      item && item.title && item.title.toLowerCase() === this.title.toLowerCase()
+    );
 
     this.isFound = this.contentFilter.length > 0;
 
-    this.message = this.isFound ? `Meal with title '${this.title}' was found.` : `Meal with title '${this.title}' was not found.`;
+    this.message = this.isFound 
+    ? `Content with title '${this.title}' found.` 
+    : `Content with title '${this.title}' not found.`;
   } 
 
   constructor(private mealService: MealServiceService){ }

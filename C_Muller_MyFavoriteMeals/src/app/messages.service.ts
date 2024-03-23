@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class MessagesService {
-  private messageSubject = new Subject<string[]>();
+  //private messageSubject = new Subject<string[]>();
 
   messages:string[] = [];
 
